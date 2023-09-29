@@ -1,0 +1,16 @@
+﻿//capture the model passing fromt 
+@model IEnumerable<Category>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@foreach(var obj in Model)
+{
+    @obj.Name 
+    @obj.Id
+    @obj.DisplayOrder
+}
