@@ -1,0 +1,38 @@
+﻿//capture the model passing from the controller
+@model IEnumerable<Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="container">
+    <div class="row my-4">
+        <div class="col-6">
+            <h2 class="text-primary">List</h2>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <a asp-controller="Customer" asp-action="Create" class="btn btn-primary">Create New Category</a>
+        </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Display Order</th>
+          <th scope="col">Create Time</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+          @foreach (var obj in Model){
+            <tr>
+              <th scope="row">1</th>
+              <td>@obj.Name</td>
+              <td>@obj.DisplayOrder </td>
+              <td>@obj.CreatedDateTime</td>
+            </tr> 
+          }
+      </tbody>
+    </table>
+</div>

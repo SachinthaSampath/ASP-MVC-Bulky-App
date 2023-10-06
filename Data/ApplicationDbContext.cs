@@ -24,5 +24,6 @@ namespace BulkyBookWebASP.Data
         }
 
         public DbSet<Category> categories { get; set; }
+        public DbSet<Customer> customers { get; set; }
     }
 }
