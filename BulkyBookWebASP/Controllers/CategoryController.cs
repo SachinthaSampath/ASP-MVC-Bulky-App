@@ -28,10 +28,13 @@ namespace BulkyBookWebASP.Controllers
             return View(objcategoryList);
         }
 
+        //GET
         public IActionResult Create()
         {         
             return View();
         }
+
+        //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
@@ -44,6 +47,8 @@ namespace BulkyBookWebASP.Controllers
             {
                 ModelState.AddModelError("name", "Name and display order shold not be the same.");
             }
+
+            //check whether submitted data is valid with the rules defined in the Model
             if (ModelState.IsValid)
             {
 
@@ -54,7 +59,8 @@ namespace BulkyBookWebASP.Controllers
                 //redirect to an action, Index action of the same controller
                 return RedirectToAction("Index");
             }
-            return View();
+            //if any error is there, return the view with the object
+            return View(obj);
         }
     }
 }

@@ -1,0 +1,33 @@
+﻿@model BulkyBookWebASP.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div>
+        <label asp-for="Qty"></label>
+        <input asp-for="Qty" />
+        <span asp-validation-for="Qty"></span>
+    </div>
+    <div>
+        <button type="submit">Create</button>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

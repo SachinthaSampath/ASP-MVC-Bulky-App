@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Product>
+ 
+@{
+    ViewData["Title"] = "View Products";
+}
+
+<p><button class="btn btn-primary"><a asp-controller="Product" asp-action="Create">Create</a></button></p>
+
+<table>
+    @foreach(Product p in Model){
+        <tr>
+            <td>@p.ID</td>d
+            <td>@p.Name</td>
+            <td>@p.Description</td>
+            <td>@p.Qty</td>
+            <td><a asp-action="Edit" asp-controller="Product" asp-route-id="@p.ID">Edit</a></td>
+        </tr>
+    }
+</table>
